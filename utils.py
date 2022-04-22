@@ -2,10 +2,11 @@ import requests
 import xmltodict
 from advertools import robotstxt_to_df
 from bs4 import BeautifulSoup
-import requests
 from advertools import sitemap_to_df
 from termcolor import colored
 from collections import Counter
+from googlesearch import search
+import math
 
 def redirectTest(domTest):
     try:
@@ -20,8 +21,9 @@ def redirectTest(domTest):
             print ("Tested:"+domTest+"\n\t"+r.url+"\n\t"+str(r.status_code))
             return str("Tested:"+domTest+"\n\t"+r.url+"\n\t"+str(r.status_code))
     except requests.exceptions.RequestException as e:  
-        print ("Tested:"+domTest+"\n\t"+e)
-        return str("Tested:"+domTest+"\n\t"+e)
+        # print ("Tested:"+domTest+"\n\t"+e)
+        # return str("Tested:"+domTest+"\n\t"+e)
+        return str(1)
     pass
 
 def concatenateDom(dom):
@@ -57,3 +59,22 @@ def title(url):
         ret_title = text
         ret_title_len = str("Number of Character in the Title: "+str(len(text)))
         return ret_title, ret_title_len
+
+
+########## RANK based on website and keyword
+
+
+
+# Google rank for given website and key word
+def url_keyword_rank(website, keyword):
+    found = False
+    urls = search(keyword, tld="com", num=100, stop=100, pause=2)
+    for index, url in enumerate(urls):
+        if website in url:
+            ret_str = f"Your Website Rank for keyword {keyword} is: {index+1} \n"
+            ret_str += f"And it displayed on Google Page Number:{math.ceil((index+1)/10)}"
+            found = True
+            return ret_str
+            break
+    if not found:
+        return f"Your Website is not in top 100 for keyword {keyword}"

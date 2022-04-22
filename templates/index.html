@@ -1,48 +1,496 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<!--
+Author: Rankraze
 
-{% block content %}
+-->
+<html lang="en">
+	<!--begin::Head-->
+	<head><base href="">
+		<title>Rankraze SEO Tool</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="Rankraze SEO Tool" />
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Rankraze SEO Tool" />
+		<meta property="og:url" content="https://keenthemes.com/metronic" />
+		<meta property="og:site_name" content="#" />
+		<link rel="canonical" href="#" />
+		<link rel="shortcut icon" href= "../assets/media/logos/fav.png" />
+		<!--begin::Fonts-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+		<!--end::Fonts-->
+		<!--begin::Global Stylesheets Bundle(used by all pages)-->
+		<link href= "{{ url_for('static', filename='assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
+		<link href= "{{ url_for('static', filename='css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
+		<!--end::Global Stylesheets Bundle-->
+	</head>
+	<!--end::Head-->
+	<!--begin::Body-->
+	<body id="kt_body" data-bs-spy="scroll" data-bs-target="#kt_landing_menu" data-bs-offset="200" class="bg-white position-relative">
+		<!--begin::Main-->
+		<!--begin::Root-->
+		<div class="d-flex flex-column flex-root">
+			<!--begin::Header Section-->
+			<div class="mb-0" id="home">
+				<!--begin::Wrapper-->
+				<div class="bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-bottom landing-dark-bg" style="background-image: url(assets/media/svg/illustrations/landing.svg)">
+					<!--begin::Header-->
+					<div class="landing-header" data-kt-sticky="true" data-kt-sticky-name="landing-header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
+						<!--begin::Container-->
+						<div class="container">
+							<!--begin::Wrapper-->
+							<div class="d-flex align-items-center justify-content-between">
+								<!--begin::Logo-->
+								<div class="d-flex align-items-center flex-equal">
+									<!--begin::Mobile menu toggle-->
+									<button class="btn btn-icon btn-active-color-primary me-3 d-flex d-lg-none" id="kt_landing_menu_toggle">
+										<!--begin::Svg Icon | path: icons/duotune/abstract/abs015.svg-->
+										<span class="svg-icon svg-icon-2hx">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+												<path d="M21 7H3C2.4 7 2 6.6 2 6V4C2 3.4 2.4 3 3 3H21C21.6 3 22 3.4 22 4V6C22 6.6 21.6 7 21 7Z" fill="black" />
+												<path opacity="0.3" d="M21 14H3C2.4 14 2 13.6 2 13V11C2 10.4 2.4 10 3 10H21C21.6 10 22 10.4 22 11V13C22 13.6 21.6 14 21 14ZM22 20V18C22 17.4 21.6 17 21 17H3C2.4 17 2 17.4 2 18V20C2 20.6 2.4 21 3 21H21C21.6 21 22 20.6 22 20Z" fill="black" />
+											</svg>
+										</span>
+										<!--end::Svg Icon-->
+									</button>
+									<!--end::Mobile menu toggle-->
+									<!--begin::Logo image-->
+									<a href="../../demo1/dist/landing.html">
+										<img alt="Logo" src= "{{ url_for('static', filename='assets/media/logos/logo1.png')}}" class="logo-default h-25px h-lg-30px" />
+										<img alt="Logo" src="{{ url_for('static', filename='assets/media/logos/logo.png')}}" class="logo-sticky h-20px h-lg-25px" />
+									</a>
+									<!--end::Logo image-->
+								</div>
+								<!--end::Logo-->
+								<!--begin::Menu wrapper-->
+								
+								<!--end::Menu wrapper-->
+								<!--begin::Toolbar-->
+								<div class="flex-equal text-end ms-1">
+									<a href="../../demo1/dist/authentication/flows/basic/sign-in.html" class="btn btn-success">Sign In</a>
+								</div>
+								<!--end::Toolbar-->
+							</div>
+							<!--end::Wrapper-->
+						</div>
+						<!--end::Container-->
+					</div>
+					<!--end::Header-->
+					<!--begin::Landing hero-->
+					<div class="d-flex flex-column flex-center w-100 min-h-350px min-h-lg-500px px-9">
+						<!--begin::Heading-->
+						<div class="text-center mb-5 mb-lg-10 py-10 py-lg-20">
+							<!--begin::Title-->
+							<h1 class="text-white lh-base fw-bolder fs-2x fs-lg-3x mb-15">Analyze your Website 
+							<br />with our
+							<span style="background: linear-gradient(to right, #12CE5D 0%, #FFD80C 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
+								<span id="kt_landing_hero_text"> Rankraze SEO tool.</span>
+							</span></h1>
+							<!--end::Title-->
+							<!--begin::Action-->
+							<a href="#" class="btn btn-primary">Check your Website rank</a>
+							<!--end::Action-->
+						</div>
+						<!--end::Heading-->
+						<!--begin::Clients-->
+						<div class="d-flex flex-center flex-wrap position-relative px-5">
+							<!--begin::Client-->
+							<div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Fujifilm">
+								<img src="assets/media/svg/brand-logos/fujifilm.svg" class="mh-30px mh-lg-40px" alt="" />
+							</div>
+							<!--end::Client-->
+							<!--begin::Client-->
+							<div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Vodafone">
+								<img src="assets/media/svg/brand-logos/vodafone.svg" class="mh-30px mh-lg-40px" alt="" />
+							</div>
+							<!--end::Client-->
+							<!--begin::Client-->
+							<div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="KPMG International">
+								<img src="assets/media/svg/brand-logos/kpmg.svg" class="mh-30px mh-lg-40px" alt="" />
+							</div>
+							<!--end::Client-->
+							<!--begin::Client-->
+							<div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Nasa">
+								<img src="assets/media/svg/brand-logos/nasa.svg" class="mh-30px mh-lg-40px" alt="" />
+							</div>
+							<!--end::Client-->
+							<!--begin::Client-->
+							<div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Aspnetzero">
+								<img src="assets/media/svg/brand-logos/aspnetzero.svg" class="mh-30px mh-lg-40px" alt="" />
+							</div>
+							<!--end::Client-->
+							<!--begin::Client-->
+							<div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="AON - Empower Results">
+								<img src="assets/media/svg/brand-logos/aon.svg" class="mh-30px mh-lg-40px" alt="" />
+							</div>
+							<!--end::Client-->
+							<!--begin::Client-->
+							<div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Hewlett-Packard">
+								<img src="assets/media/svg/brand-logos/hp-3.svg" class="mh-30px mh-lg-40px" alt="" />
+							</div>
+							<!--end::Client-->
+							<!--begin::Client-->
+							<div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Truman">
+								<img src="assets/media/svg/brand-logos/truman.svg" class="mh-30px mh-lg-40px" alt="" />
+							</div>
+							<!--end::Client-->
+						</div>
+						<!--end::Clients-->
+					</div>
+					<!--end::Landing hero-->
+				</div>
+				<!--end::Wrapper-->
+				<!--begin::Curve bottom-->
+				<div class="landing-curve landing-dark-color mb-10 mb-lg-20">
+					<svg viewBox="15 12 1470 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M0 11C3.93573 11.3356 7.85984 11.6689 11.7725 12H1488.16C1492.1 11.6689 1496.04 11.3356 1500 11V12H1488.16C913.668 60.3476 586.282 60.6117 11.7725 12H0V11Z" fill="currentColor"></path>
+					</svg>
+				</div>
+				<!--end::Curve bottom-->
+			</div>
+			<!--end::Header Section-->
+			<!--begin::How It Works Section-->
+			    
+								<div class="container"><!--begin::Contacts App- Edit Contact-->
+								<div class="row g-7">
+								
+									<!--begin::Contact groups-->
+									
+									<!--end::Contact groups-->
+									<!--begin::Search-->
+									
+									<!--end::Search-->
+									<!--begin::Content-->
+									<div class="col-xl-12">
+									<h3 class="fs-2hx text-dark mb-5" id="how-it-works" data-kt-scroll-offset="{default: 100, lg: 150}">How it Works</h3>
+										<!--begin::Contacts-->
+										<div class="card card-flush h-lg-100" id="kt_contacts_main">
+											<!--begin::Card header-->
+											<div class="card-header pt-7" id="kt_chat_contacts_header">
+												<!--begin::Card title-->
+												
+												<!--end::Card title-->
+											</div>
+											<!--end::Card header-->
+											<!--begin::Card body-->
+											<div class="card-body pt-5">
+												<!--begin::Form-->
+												<form id="kt_ecommerce_settings_general_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="{{ url_for("func1")}}">
+													<!--begin::Input group-->
+													<div class="mb-7">
+														<!--begin::Label-->
+														
+														<!--end::Label-->
+														<!--begin::Image input wrapper-->
+														
+														<!--end::Image input wrapper-->
+													</div>
+													<!--end::Input group-->
+													<!--begin::Input group-->
+													<div class="fv-row mb-7 fv-plugins-icon-container">
+														<!--begin::Label-->
+														<label class="fs-6 fw-bold form-label mt-3">
+															<span class="required">Name</span>
+															<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="Enter the contact's name." aria-label="Enter the contact's name."></i>
+														</label>
+														<!--end::Label-->
+														<!--begin::Input-->
+														<input type="text" class="form-control form-control-solid" name="name" value="Name">
+														<!--end::Input-->
+													<div class="fv-plugins-message-container invalid-feedback"></div></div>
+													<!--end::Input group-->
+													<!--begin::Input group-->
+													<div class="fv-row mb-7">
+														<!--begin::Label-->
+														<label class="fs-6 fw-bold form-label mt-3">
+															<span>Company Name</span>
+															<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="Enter the contact's company name (optional)." aria-label="Enter the contact's company name (optional)."></i>
+														</label>
+														<!--end::Label-->
+														<!--begin::Input-->
+														<input type="text" class="form-control form-control-solid" name="company_name" value="">
+														<!--end::Input-->
+													</div>
+													<!--end::Input group-->
+													<!--begin::Row-->
+													<div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+														<!--begin::Col-->
+														<div class="col">
+															<!--begin::Input group-->
+															<div class="fv-row mb-7 fv-plugins-icon-container">
+																<!--begin::Label-->
+																<label class="fs-6 fw-bold form-label mt-3">
+																	<span class="required">Email</span>
+																	<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="Enter the contact's email." aria-label="Enter the contact's email."></i>
+																</label>
+																<!--end::Label-->
+																<!--begin::Input-->
+																<input type="email" class="form-control form-control-solid" name="email" value="smith@kpmg.com">
+																<!--end::Input-->
+															<div class="fv-plugins-message-container invalid-feedback"></div></div>
+															<!--end::Input group-->
+														</div>
+														<!--end::Col-->
+														<!--begin::Col-->
+														<div class="col">
+															<!--begin::Input group-->
+															<div class="fv-row mb-7">
+																<!--begin::Label-->
+																<label class="fs-6 fw-bold form-label mt-3">
+																	<span>Phone</span>
+																	<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="Enter the contact's phone number (optional)." aria-label="Enter the contact's phone number (optional)."></i>
+																</label>
+																<!--end::Label-->
+																<!--begin::Input-->
+																<input type="text" class="form-control form-control-solid" name="phone" value="">
+																<!--end::Input-->
+															</div>
+															<!--end::Input group-->
+														</div>
+														<!--end::Col-->
+													</div>
+													<!--end::Row-->
+													<!--begin::Row-->
+													<div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-3">
+														<!--begin::Col-->
+														<div class="col">
+															<!--begin::Input group-->
+															<div class="fv-row mb-7">
+																<!--begin::Label-->
+																<label class="fs-6 fw-bold form-label mt-3">
+																	<span>Website</span>
+																	<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="Enter the contact's city of residence (optional)." aria-label="Enter the contact's city of residence (optional)."></i>
+																</label>
+																<!--end::Label-->
+																<!--begin::Input-->
+																<input type="text" class="form-control form-control-solid" name="website" value="website111">
+																<!--end::Input-->
+															</div>
+															<!--end::Input group-->
+														</div>
+														<!--end::Col-->
+														<!--begin::Col-->
+														<div class="col" id="customFields">
+															<!--begin::Input group-->
+															<div class="fv-row mb-7 fv-plugins-icon-container">
+																<!--begin::Label-->
+																<label class="fs-6 fw-bold form-label mt-3">
+																	<span class="required">Keywords</span>
+																</label>
+																<!--end::Label-->
+																<input type="text" class="form-control form-control-solid" name="customFieldName[]" id="customFieldName" value="">
+																
+															<div class="fv-plugins-message-container invalid-feedback"></div></div>
+															<!--end::Input group-->
+														</div>
+														<div class="col">
+															<!--begin::Input group-->
+															<a href="javascript:void(0);" class="addCF btn btn-primary">Add</a>
+															<!--end::Input group-->
+														</div>
+														<!--end::Col-->
+													</div>
+													<!--end::Row-->
+													<!--begin::Input group-->
+													
+													<!--end::Input group-->
+													<!--begin::Separator-->
+													<div class="separator mb-6"></div>
+													<!--end::Separator-->
+													<!--begin::Action buttons-->
+													<div class="d-flex justify-content-end">
+														<!--begin::Button-->
+														
+														<!--end::Button-->
+														<!--begin::Button-->
+														<button type="submit" data-kt-contacts-type="submit" class="btn btn-primary">
+															<span class="indicator-label">Submit</span>
+															<span class="indicator-progress">Please wait...
+															<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+														</button>
+														<!--end::Button-->
+													</div>
+													<!--end::Action buttons-->
+												<div></div></form>
+												<!--end::Form-->
+											</div>
+											<!--end::Card body-->
+										</div>
+										<!--end::Contacts-->
+									</div>
+									<!--end::Content-->
+								</div>
+								</div>
+								<!--end::Contacts App- Edit Contact-->
+							
+			<!--end::How It Works Section-->
+			<!--begin::Statistics Section-->
+		
+			<!--end::Statistics Section-->
+			<!--begin::Team Section-->
+		
+			<!--end::Team Section-->
+			<!--begin::Projects Section-->
+			<div class="mb-lg-n15 position-relative z-index-2">
+				<!--begin::Container-->
+			
+				<!--end::Container-->
+			</div>
+			<!--end::Projects Section-->
+			<!--begin::Pricing Section-->
+		
+			<!--end::Pricing Section-->
+			<!--begin::Testimonials Section-->
+			<div class="mt-20 mb-n20 position-relative z-index-2">
+				<!--begin::Container-->
+				<div class="container">
+					<!--begin::Heading-->
+				
+					<!--end::Heading-->
+					<!--begin::Row-->
+					
+					<!--end::Row-->
+					<!--begin::Highlight-->
+					<div class="d-flex flex-stack flex-wrap flex-md-nowrap card-rounded shadow p-8 p-lg-12 mb-n5 mb-lg-n13" style="background: linear-gradient(90deg, #20AA3E 0%, #03A588 100%);">
+						<!--begin::Content-->
+						<div class="my-2 me-5">
+							<!--begin::Title-->
+							<div class="fs-1 fs-lg-2qx fw-bolder text-white mb-2">Start With rankraze SEO tool Today,
+							<span class="fw-normal">Speed Up Website!</span></div>
+							<!--end::Title-->
+							<!--begin::Description-->
+							<div class="fs-6 fs-lg-5 text-white fw-bold opacity-75">Join over 100,000 Professionals Community to Stay Ahead</div>
+							<!--end::Description-->
+						</div>
+						<!--end::Content-->
+						<!--begin::Link-->
+						<a href="https://1.envato.market/EA4JP" class="btn btn-lg btn-outline border-2 btn-outline-white flex-shrink-0 my-2">Contact us</a>
+						<!--end::Link-->
+					</div>
+					<!--end::Highlight-->
+				</div>
+				<!--end::Container-->
+			</div>
+			<!--end::Testimonials Section-->
+			<!--begin::Footer Section-->
+			<div class="mb-0">
+				<!--begin::Curve top-->
+				<div class="landing-curve landing-dark-color">
+					<svg viewBox="15 -1 1470 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1 48C4.93573 47.6644 8.85984 47.3311 12.7725 47H1489.16C1493.1 47.3311 1497.04 47.6644 1501 48V47H1489.16C914.668 -1.34764 587.282 -1.61174 12.7725 47H1V48Z" fill="currentColor"></path>
+					</svg>
+				</div>
+				<!--end::Curve top-->
+				<!--begin::Wrapper-->
+				<div class="landing-dark-bg pt-20">
+					<!--begin::Container-->
+					<div class="container">
+						<!--begin::Row-->
+						<div class="row py-10 py-lg-20">
+							<!--begin::Col-->
+							<div class="col-lg-16 pe-lg-16 mb-10 mb-lg-0">
+								<!--begin::Block-->
+								<div class="rounded landing-dark-border p-9 mb-10">
+									<!--begin::Title-->
+									<h2 class="text-white">Reach Us</h2><br>
+									<!--end::Title-->
+									<!--begin::Text-->
+									<h4 class="text-white">
+#249,1st floor,2nd St,TNHB Colony,Periyar Nagar West,Korattur,Chennai-600080(Landmark: Padi Flyover - Near Anna nagar)</h4>
 
-<script>
-    function check(elem) {
-        console.log('1');  
-        let c = document.get("company");
-        console.log(c);
-        
-    }
-</script>
-
-<div class="container">
-    <h1>Check where you stand</h1>
-    <hr>
-    <form action="{{ url_for("func")}}" method="post">
-
-        <br>
-        <div class="form-group row">
-            <label for="website" class="col-sm-2 col-form-label"><strong>Website </strong></label>
-            <div class="col-sm-6">
-                <input type="text" class="form-control" name="website" placeholder="website">
-            </div>
-        </div>
-
-        <br>
-        <div class="form-group row">
-            <label for="email" class="col-sm-2 col-form-label"><strong>Email </strong></label>
-            <div class="col-sm-6">
-                <input type="text" class="form-control" name="email" placeholder="email">
-            </div>
-        </div>
-
-        <br>
-        <div class="form-group row">
-            <label for="company" class="col-sm-2 col-form-label"><strong>Company </strong></label>
-            <div class="col-sm-6">
-                <input type="text" class="form-control" name="company" placeholder="company">
-            </div>
-        </div>
-        <hr>
-        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-    </form>
-
-    <a href="/report_salary">Report salary</a>
-</div>
-{% endblock %}
+									<!--end::Text-->
+								</div>
+								<!--end::Block-->
+								<!--begin::Block-->
+								
+								<!--end::Block-->
+							</div>
+							<!--end::Col-->
+							<!--begin::Col-->
+							
+							<!--end::Col-->
+						</div>
+						<!--end::Row-->
+					</div>
+					<!--end::Container-->
+					<!--begin::Separator-->
+					<div class="landing-dark-separator"></div>
+					<!--end::Separator-->
+					<!--begin::Container-->
+					<div class="container">
+						<!--begin::Wrapper-->
+						<div class="d-flex flex-column flex-md-row flex-stack py-7 py-lg-10">
+							<!--begin::Copyright-->
+							<div class="d-flex align-items-center order-2 order-md-1">
+								<!--begin::Logo-->
+								
+								<!--end::Logo image-->
+								<!--begin::Logo image-->
+								<span class="mx-5 fs-6 fw-bold text-gray-600 pt-1" href="#">© 2022 Rankraze</span>
+								<!--end::Logo image-->
+							</div>
+							<!--end::Copyright-->
+							<!--begin::Menu-->
+							<ul class="menu menu-gray-600 menu-hover-primary fw-bold fs-6 fs-md-5 order-1 mb-5 mb-md-0">
+								<li class="menu-item">
+									<a href="#" target="_blank" class="menu-link px-2">About</a>
+								</li>
+								<li class="menu-item mx-5">
+									<a href="#" target="_blank" class="menu-link px-2">Support</a>
+								</li>
+								<li class="menu-item">
+									<a href="" target="_blank" class="menu-link px-2">Purchase</a>
+								</li>
+							</ul>
+							<!--end::Menu-->
+						</div>
+						<!--end::Wrapper-->
+					</div>
+					<!--end::Container-->
+				</div>
+				<!--end::Wrapper-->
+			</div>
+			<!--end::Footer Section-->
+			<!--begin::Scrolltop-->
+			<div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+				<!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
+				<span class="svg-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+						<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="black" />
+						<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="black" />
+					</svg>
+				</span>
+				<!--end::Svg Icon-->
+			</div>
+			<!--end::Scrolltop-->
+		</div>
+		<!--end::Root-->
+		<!--end::Main-->
+		<!--begin::Javascript-->
+		<script>var hostUrl = "../static/assets/";</script>
+		<!--begin::Global Javascript Bundle(used by all pages)-->
+		<script src="{{ url_for('static', filename='assets/plugins/global/plugins.bundle.js')}}" ></script>
+		<script src="{{ url_for('static', filename='assets/js/scripts.bundle.js')}}"></script>
+		<!--end::Global Javascript Bundle-->
+		<!--begin::Page Vendors Javascript(used by this page)-->
+		<script src="{{ url_for('static', filename='assets/plugins/custom/fslightbox/fslightbox.bundle.js')}}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/custom/typedjs/typedjs.bundle.js')}}"></script>
+		<!--end::Page Vendors Javascript-->
+		<!--begin::Page Custom Javascript(used by this page)-->
+		<script src="{{ url_for('static', filename='assets/js/custom/landing.js')}}"></script>
+		<script src="{{ url_for('static', filename='assets/js/custom/pages/pricing/general.js')}}"></script>
+		<!--end::Page Custom Javascript-->
+		<!--end::Javascript-->
+		<script>$(document).ready(function(){
+	$(".addCF").click(function(){
+		$("#customFields").append('<tr valign="top"><td>&nbsp; <input type="text" class="form-control form-control-solid" id="customFieldValue" name="customFieldValue[]" value="" placeholder="Input Value" />  &nbsp; <a href="javascript:void(0);" class="remCF btn btn-danger">Remove</a>');
+	});
+    $("#customFields").on('click','.remCF',function(){
+        $(this).parent().parent().remove();
+    });
+});</script>
+	</body>
+	<!--end::Body-->
+</html>

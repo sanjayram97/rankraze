@@ -1,0 +1,48 @@
+{% extends "base_orig.html" %}
+
+{% block content %}
+
+<script>
+    function check(elem) {
+        console.log('1');  
+        let c = document.get("company");
+        console.log(c);
+        
+    }
+</script>
+
+<div class="container">
+    <h1>Check where you stand</h1>
+    <hr>
+    <form action="{{ url_for("func")}}" method="post">
+
+        <br>
+        <div class="form-group row">
+            <label for="website" class="col-sm-2 col-form-label"><strong>Website </strong></label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="website" placeholder="website">
+            </div>
+        </div>
+
+        <br>
+        <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label"><strong>Email </strong></label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="email" placeholder="email">
+            </div>
+        </div>
+
+        <br>
+        <div class="form-group row">
+            <label for="company" class="col-sm-2 col-form-label"><strong>Company </strong></label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="company" placeholder="company">
+            </div>
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </form>
+
+    <a href="/report_salary">Report salary</a>
+</div>
+{% endblock %}

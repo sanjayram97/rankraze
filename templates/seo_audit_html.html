@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><base href="">
+		<title>Rankraze SEO Tool</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="Rankraze SEO Tool" />
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Rankraze SEO Tool" />
+		<meta property="og:url" content="https://keenthemes.com/metronic" />
+		<meta property="og:site_name" content="#" />
+		<link rel="canonical" href="#" />
+		<link rel="shortcut icon" href= "../assets/media/logos/fav.png" />
+		<!--begin::Fonts-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+		<!--end::Fonts-->
+		<!--begin::Global Stylesheets Bundle(used by all pages)-->
+		<link href= "{{ url_for('static', filename='assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
+		<link href= "{{ url_for('static', filename='css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
+		<!--end::Global Stylesheets Bundle-->
+	</head>
+    <body id="kt_body" data-bs-spy="scroll" data-bs-target="#kt_landing_menu" data-bs-offset="200" class="bg-white position-relative">
+    
+<div class="container">
+    <form action="http://localhost:5000/seo_audit" method="POST" enctype="multipart/form-data">
+        <div class="fv-row mb-7">
+            <!--begin::Label-->
+            <label class="fs-6 fw-bold form-label mt-3">
+                <span>Website</span>
+                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="Enter the contact's company name (optional)." aria-label="Enter the contact's company name (optional)."></i>
+            </label>
+            <!--end::Label-->
+            <!--begin::Input-->
+            <input type="text" class="form-control form-control-solid" name="website" value="">
+            <!--end::Input-->
+        </div>
+        
+        <br>
+        <div class="fv-row mb-7">
+            <!--begin::Label-->
+            <label class="fs-6 fw-bold form-label mt-3">
+                <span>Email</span>
+                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="Enter the contact's company name (optional)." aria-label="Enter the contact's company name (optional)."></i>
+            </label>
+            <!--end::Label-->
+            <!--begin::Input-->
+            <input type="text" class="form-control form-control-solid" name="email" value="">
+            <!--end::Input-->
+        </div>
+        
+        <br>
+        <div class="fv-row mb-7">
+            <!--begin::Label-->
+            <label class="fs-6 fw-bold form-label mt-3">
+                <span>Company</span>
+                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="Enter the contact's company name (optional)." aria-label="Enter the contact's company name (optional)."></i>
+            </label>
+            <!--end::Label-->
+            <!--begin::Input-->
+            <input type="text" class="form-control form-control-solid" name="company" value="">
+            <!--end::Input-->
+        </div>
+
+        <button type="submit" data-kt-contacts-type="submit" class="btn btn-primary">
+            <span class="indicator-label">Submit</span>
+            <span class="indicator-progress">Please wait...
+            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+        </button>
+        
+    </form>
+</div>
+</body>
+</html>
